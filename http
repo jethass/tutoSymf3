@@ -1,0 +1,47 @@
+L'objet Request de Symfony:
+------------------------------
+
+use Symfony\Component\HttpFoundation\Request;
+$request = Request::createFromGlobals();
+
+// L'URI va être demandée (ex. : /about)
+$request->getPathInfo();
+
+// récupère respectivement les variables GET et POST
+$request->query->get('foo');
+$request->request->get('bar', 'valeur par défaut si bar n\'existe pas');
+
+// récupère les variables SERVER
+$request->server->get('HTTP_HOST');
+
+// récupère une instance de fichier uploadé identifié par foo
+$request->files->get('foo');
+
+// récupère une valeur de COOKIE
+$request->cookies->get('PHPSESSID');
+
+// récupère un en-tête de requête HTTP, avec des clés minuscules normalisées
+$request->headers->get('host');
+$request->headers->get('content_type');
+
+$request->getMethod(); // GET, POST, PUT, DELETE, HEAD
+$request->getLanguages(); // un tableau des langages que le client accepte
+
+L'objet Response de Symfony:
+------------------------------
+
+use Symfony\Component\HttpFoundation\Response;
+
+$response = new Response();
+
+$response->setContent('<html><body><h1>Hello world!</h1></body></html>');
+$response->setStatusCode(Response::HTTP_OK);
+$response->headers->set('Content-Type', 'text/html');
+
+// affiche les en-têtes HTTP suivis par le contenu
+$response->send();
+
+Il existe aussi des classes spéciales pour faciliter la création de certains types de réponses :
+• JsonResponse ;
+• BinaryFileResponse (pour les fichiers de streaming et les fichiers en téléchargement) ;
+• StreamedResponse (pour le streaming des grosses réponses).
