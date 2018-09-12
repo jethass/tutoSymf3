@@ -1,0 +1,24 @@
+HttpFoundation
+Contient les classes Request et Response, tout comme d'autres classes pour gérer les sessions et les uploads de
+fichiers.
+
+Routing
+Puissant et rapide système vous autorisant à mapper une URI spécifique (ex. : /contact) à certaines informations à
+propos de comment cette requête doit être gérée (par exemple : exécuter la méthode contactAction()).
+
+Form
+Un framework complet et flexible pour créer des formulaires et gérer leur soumission.
+
+Validator
+Un système pour créer des règles relatives aux données, qui consiste en la validation de ces données selon que les
+valeurs soumises par l'utilisateur respectent ces règles ou pas.
+
+Templating
+Un toolkit pour faire du rendu de template, gérer leur héritage (ex. : un template peut être enrichi avec un layout) et
+effectuer d'autres tâches standards sur les templates.
+
+Security
+Une bibliothèque puissante pour gérer tout type de sécurité dans une application.
+
+Translation
+Un framework pour traduire des chaînes dans votre application.
